@@ -61,16 +61,7 @@ Before running the tests, ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   https://gitlab.com/anithaqa_test/CivilService.git
-
----
-
-## Running the Tests
-
-1. To run all the tests, use the following Gradle command:
-   ```bash
-   ./gradlew test
-    gradle test
+   https://github.com/AnithaQA-Test/Anitha
 
 ---
 
@@ -91,7 +82,7 @@ Before running the tests, ensure you have the following installed:
 ## Test Reports
 
 1. After running the tests, an HTML report is generated in the target/cucumber-reports/cucumber-reports directory. Open
-   the cucumber-reports.html file to view the detailed test results, including:
+   the cucumber-reports.html file 
 
 ---
 
