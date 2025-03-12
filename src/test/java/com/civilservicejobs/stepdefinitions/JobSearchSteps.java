@@ -124,10 +124,9 @@ public class JobSearchSteps {
                 currentUrl.contains("civilservicecommission.independent.gov.uk/code"));
         LoggingUtils.logInfo("Redirected to the 'Code' section, the URL is: " + currentUrl);
 
-        // Add validation to confirm the new page is correct
         String actualTitle = driver.getTitle();
-        // Log the title using the logger
         LoggingUtils.logInfo("The title of the page is: " + actualTitle);
+
         if (actualTitle.equals(expectedPage)) {
             LoggingUtils.logInfo("Title matches expected value : " + expectedPage);
         } else {

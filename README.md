@@ -1,27 +1,78 @@
 # Civil Service Jobs Search - Cucumber Test Automation
 
-This project contains automated tests for the Civil Service Jobs Search functionality using Cucumber, a behavior-driven
-development (BDD) tool. The tests are written in Gherkin syntax and executed using Cucumber-JVM with Gradle as the build
-tool.
+This project contains automated tests for the Civil Service Jobs Search functionality using **Cucumber**, a behavior-driven development (BDD) tool. The tests are written in **Gherkin syntax** and executed using **Cucumber-JVM** with **Gradle** as the build tool.
 
 ---
 
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
-2. [Features and Scenarios](#features-and-scenarios)
-3. [Prerequisites](#prerequisites)
-4. [Setup and Installation](#setup-and-installation)
-5. [Running the Tests](#running-the-tests)
-6. [Test Reports](#test-reports)
+2. [Framework Structure](#framework-structure)
+3. [Features and Scenarios](#features-and-scenarios)
+4. [Prerequisites](#prerequisites)
+5. [Setup and Installation](#setup-and-installation)
+6. [Running the Tests](#running-the-tests)
+7. [Test Reports](#test-reports)
 
 ---
 
 ## Project Overview
 
-This project automates the testing of the Civil Service Jobs Search functionality. It includes scenarios for searching
-jobs, filtering by department, and verifying links. The tests are written in Gherkin syntax and executed using
-Cucumber-JVM with Gradle as the build tool.
+This project automates the testing of the **Civil Service Jobs Search** functionality. It includes scenarios for:
+- Searching for jobs by title and location.
+- Filtering jobs by department.
+- Verifying the Civil Service Code link.
+
+The framework is designed to be **modular**, **scalable**, and **easy to maintain**. It uses the **Page Object Model (POM)** design pattern and includes utility classes for common functionalities.
+
+---
+
+## Framework Structure
+
+The project follows a well-organized directory structure:
+Anitha
+├── gradle/ # Gradle configuration files
+├── idea/ # IntelliJ IDEA configuration files
+├── build/ # Compiled classes and build artifacts
+├── logs/ # Log files generated during test execution
+├── src/
+│ ├── main/
+│ │ ├── java/
+│ │ │ ├── pages/ # Page Object Model (POM) classes
+│ │ │ │ ├── CivilServiceCodePage.java
+│ │ │ │ ├── HomePage.java
+│ │ │ │ ├── JobDetailsPage.java
+│ │ │ │ └── SearchResultsPage.java
+│ │ │ └── utilities/ # Utility classes for common functionalities
+│ │ │ ├── AssertionUtils.java
+│ │ │ ├── BrowserUtils.java
+│ │ │ ├── ConfigReader.java
+│ │ │ ├── ConfigUtils.java
+│ │ │ ├── Constants.java
+│ │ │ ├── LoggingUtils.java
+│ │ │ ├── WaitUtils.java
+│ │ │ └── WebDriverUtils.java
+│ └── test/
+│ ├── java/
+│ │ └── com.civilservicejobs/
+│ │ ├── runners/ # Cucumber test runner
+│ │ │ └── TestRunner.java
+│ │ └── stepdefinitions/ # Step definitions for Cucumber scenarios
+│ │ └── JobSearchSteps.java
+│ └── resources/
+│ ├── config/ # Configuration files
+│ │ └── config.properties
+│ └── features/ # Cucumber feature files
+│ └── JobSearch.feature
+├── target/
+│ └── cucumber-reports/ # Cucumber test reports
+│ └── cucumber-reports.html
+├── .gitignore # Specifies files to ignore in Git
+├── .gitlab-ci.yml # GitLab CI/CD configuration
+├── build.gradle # Gradle build script
+├── gradlew # Gradle wrapper for Unix-based systems
+├── gradlew.bat # Gradle wrapper for Windows
+└── README.md # Project documentation
 
 ---
 
@@ -43,6 +94,7 @@ Cucumber-JVM with Gradle as the build tool.
 - **Scenario: Verify Civil Service Code link** (Tagged with `@ChallengeGoal`)
     - Given I click on Civil Service Code
     - When I should be redirected to the Civil Service Commission Website
+    - Then I close the browser
 
 ---
 
@@ -61,7 +113,18 @@ Before running the tests, ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   https://github.com/AnithaQA-Test/Anitha
+   git clone https://github.com/AnithaQA-Test/Anitha.git
+---  
+## Install dependencies:
+
+./gradlew build
+---
+
+## Configure WebDriver:
+
+Download the appropriate WebDriver (e.g., ChromeDriver) and ensure it is in your system's PATH.
+
+Update the config.properties file with the correct WebDriver path and browser settings.
 
 ---
 
@@ -80,9 +143,9 @@ Before running the tests, ensure you have the following installed:
 ---
 
 ## Test Reports
-
-1. After running the tests, an HTML report is generated in the target/cucumber-reports/cucumber-reports directory. Open
-   the cucumber-reports.html file 
+After running the tests, an HTML report is generated in the target/cucumber-reports directory. Open the cucumber-reports.html file to view the detailed test results.
 
 ---
+
+
 
