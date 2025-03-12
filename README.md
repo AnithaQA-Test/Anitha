@@ -102,6 +102,7 @@ Anitha
 
 Before running the tests, ensure you have the following installed:
 
+- **IntelliJ IDEA**: Recommended IDE for development and testing.
 - **Java Development Kit (JDK)**: Version 17 or higher.
 - **Gradle**: For dependency management and building the project.
 - **Cucumber-JVM**: Included in the project dependencies.
@@ -118,14 +119,6 @@ Before running the tests, ensure you have the following installed:
 ## Install dependencies:
 
 ./gradlew build
----
-
-## Configure WebDriver:
-
-Download the appropriate WebDriver (e.g., ChromeDriver) and ensure it is in your system's PATH.
-
-Update the config.properties file with the correct WebDriver path and browser settings.
-
 ---
 
 ## Running the Tests
